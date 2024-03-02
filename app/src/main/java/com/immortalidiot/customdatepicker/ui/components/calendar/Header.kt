@@ -19,13 +19,13 @@ import java.time.YearMonth
 @Composable
 fun Header(
     yearMonth: YearMonth,
-    //onPreviousMonth: (YearMonth) -> Unit,
-    //onNextMonth: (YearMonth) -> Unit,
+    onPreviousMonth: (YearMonth) -> Unit,
+    onNextMonth: (YearMonth) -> Unit,
 ) {
     Row {
         IconButton(
             onClick = {
-                //onPreviousMonth.invoke(yearMonth.minusMonths(1))
+                onPreviousMonth.invoke(yearMonth.minusMonths(1))
             }) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowLeft,
@@ -43,7 +43,7 @@ fun Header(
         )
         IconButton(
             onClick = {
-                //onNextMonth.invoke(yearMonth.plusMonths(1))
+                onNextMonth.invoke(yearMonth.plusMonths(1))
             }) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowRight,
@@ -52,10 +52,4 @@ fun Header(
             )
         }
     }
-}
-
-@Preview
-@Composable
-fun HeaderPreview() {
-    Header(yearMonth = YearMonth.now())
 }
