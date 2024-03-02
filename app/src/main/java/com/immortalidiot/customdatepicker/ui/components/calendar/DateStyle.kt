@@ -1,5 +1,6 @@
 package com.immortalidiot.customdatepicker.ui.components.calendar
 
+import androidx.compose.ui.text.capitalize
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.YearMonth
@@ -35,5 +36,6 @@ fun YearMonth.getDayStartingFromMonday(): List<LocalDate> {
 }
 
 fun YearMonth.getDisplayName(): String {
-    return "${month.getDisplayName(TextStyle.FULL, Locale.getDefault())} $year"
+    return "${month.getDisplayName(TextStyle.SHORT_STANDALONE, Locale.getDefault())} $year"
+        .replaceFirstChar { it.uppercase() }
 }
