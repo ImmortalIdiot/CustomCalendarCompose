@@ -1,5 +1,6 @@
 package com.immortalidiot.customdatepicker.ui.components.calendar
 
+import android.content.ClipData.Item
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.immortalidiot.customdatepicker.ui.theme.boldInter10
 import com.immortalidiot.customdatepicker.ui.theme.classicGray
 import com.immortalidiot.customdatepicker.ui.theme.primaryDarkBlue
+import com.immortalidiot.customdatepicker.ui.theme.semiBold10
 
 @Composable
 fun Content(
@@ -27,7 +29,7 @@ fun Content(
                 repeat(7) {
                     val item = if (index < dates.size) dates[index]
                                else CalendarUiState.Date.Empty
-                    Item(
+                    ContentItem(
                         date = item,
                         onClickListener = onDateClickListener,
                         modifier = Modifier.weight(1f)
@@ -40,7 +42,7 @@ fun Content(
 }
 
 @Composable
-fun Item(
+fun ContentItem(
     date: CalendarUiState.Date,
     onClickListener: (CalendarUiState.Date) -> Unit,
     modifier: Modifier = Modifier
@@ -58,6 +60,22 @@ fun Item(
             modifier = modifier
                 .align(Alignment.Center)
                 .padding(10.dp)
+        )
+    }
+}
+
+@Composable
+fun Item(
+    day: String,
+    modifier: Modifier = Modifier
+) {
+    Box(modifier = modifier) {
+        Text(
+            modifier = modifier
+                .align(Alignment.Center)
+                .padding(10.dp),
+            text = day,
+            style = semiBold10
         )
     }
 }
