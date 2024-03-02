@@ -36,6 +36,6 @@ fun YearMonth.getDayStartingFromMonday(): List<LocalDate> {
 }
 
 fun YearMonth.getDisplayName(): String {
-    return "${month.getDisplayName(TextStyle.SHORT_STANDALONE, Locale.getDefault())} $year"
+    return "${month.getDisplayName(TextStyle.FULL_STANDALONE, Locale.getDefault())}\t$year"
         .replaceFirstChar { it.uppercase() }
 }
