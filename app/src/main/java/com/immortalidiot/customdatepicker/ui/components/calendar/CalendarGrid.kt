@@ -66,7 +66,7 @@ fun ContentItem(
         Text(
             modifier = modifier
                 .align(Alignment.Center)
-                .padding(16.dp),
+                .padding(12.dp),
             text = date.dayOfMonth,
             style = boldLato12,
             color = if (date.isSelected) primaryDarkBlue
@@ -87,7 +87,7 @@ fun DayOfWeekItem(
         Text(
             modifier = modifier
                 .align(Alignment.Center)
-                .padding(16.dp),
+                .padding(12.dp),
             text = day,
             style = boldLato12
         )
