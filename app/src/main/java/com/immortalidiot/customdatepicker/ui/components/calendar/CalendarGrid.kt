@@ -82,7 +82,7 @@ fun DayOfWeekItem(
             modifier = modifier
                 .align(Alignment.Center)
                 .padding(12.dp),
-            text = day,
+            text = day.uppercase(),
             style = boldLato12.copy(color = darkGray)
         )
     }
