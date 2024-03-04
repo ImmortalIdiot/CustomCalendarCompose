@@ -28,7 +28,6 @@ fun Content(
     Column {
         var index = 0
         repeat(6) {
-            if (index >= dates.size) return@repeat
             Row(
                 horizontalArrangement = Arrangement.Center
             ) {
@@ -44,7 +43,6 @@ fun Content(
                 }
             }
         }
-
     }
 }
 
