@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.immortalidiot.customdatepicker.ui.theme.boldInter10
 import com.immortalidiot.customdatepicker.ui.theme.boldInter14
 import com.immortalidiot.customdatepicker.ui.theme.boldLato12
-import com.immortalidiot.customdatepicker.ui.theme.classicGray
+import com.immortalidiot.customdatepicker.ui.theme.darkGray
 import com.immortalidiot.customdatepicker.ui.theme.primaryDarkBlue
 
 @Composable
@@ -70,7 +70,7 @@ fun ContentItem(
             text = date.dayOfMonth,
             style = boldLato12,
             color = if (date.isSelected) primaryDarkBlue
-            else classicGray
+            else darkGray
         )
     }
 }
@@ -89,7 +89,7 @@ fun DayOfWeekItem(
                 .align(Alignment.Center)
                 .padding(12.dp),
             text = day,
-            style = boldLato12
+            style = boldLato12.copy(color = darkGray)
         )
     }
 }

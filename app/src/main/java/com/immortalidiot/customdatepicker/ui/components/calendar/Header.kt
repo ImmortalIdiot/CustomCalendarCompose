@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.immortalidiot.customdatepicker.ui.theme.boldLato12
-import com.immortalidiot.customdatepicker.ui.theme.classicGray
+import com.immortalidiot.customdatepicker.ui.theme.darkGray
 import java.time.YearMonth
 
 @Composable
@@ -35,7 +35,7 @@ fun Header(
             }) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowLeft,
-                tint = classicGray,
+                tint = darkGray,
                 contentDescription = "previous month"
             )
         }
@@ -45,7 +45,7 @@ fun Header(
                 .align(Alignment.CenterVertically),
             text = yearMonth.getDisplayName(),
             textAlign = TextAlign.Center,
-            style = boldLato12.copy(color = classicGray)
+            style = boldLato12.copy(color = darkGray)
         )
         IconButton(
             onClick = {
@@ -53,7 +53,7 @@ fun Header(
             }) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowRight,
-                tint = classicGray,
+                tint = darkGray,
                 contentDescription = "next month"
             )
         }
