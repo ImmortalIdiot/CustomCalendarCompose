@@ -24,14 +24,7 @@ fun Content(
     dates: List<CalendarUiState.Date>,
     onDateClickListener: (CalendarUiState.Date) -> Unit,
 ) {
-    Column(
-        modifier = Modifier
-            .border(
-                shape = RoundedCornerShape(16.dp),
-                color = primaryDarkBlue,
-                width = 4.dp
-            )
-    ) {
+    Column {
         var index = 0
         repeat(6) {
             if (index >= dates.size) return@repeat
@@ -50,6 +43,7 @@ fun Content(
                 }
             }
         }
+
     }
 }
 
