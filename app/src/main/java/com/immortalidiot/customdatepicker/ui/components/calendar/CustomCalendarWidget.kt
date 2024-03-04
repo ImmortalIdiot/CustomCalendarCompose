@@ -32,6 +32,11 @@ fun CustomCalendarWidget(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Header(
+            yearMonth = yearMonth,
+            onPreviousMonth = onPreviousMonth,
+            onNextMonth = onNextMonth
+        )
         Row {
             repeat(days.size) {
                 val item = days[it]
@@ -41,11 +46,6 @@ fun CustomCalendarWidget(
                 )
             }
         }
-        Header(
-            yearMonth = yearMonth,
-            onPreviousMonth = onPreviousMonth,
-            onNextMonth = onNextMonth
-        )
         Divider(
             modifier = modifier.fillMaxWidth(0.9f),
             color = lightGray,
