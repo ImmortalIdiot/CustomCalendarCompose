@@ -18,7 +18,10 @@ data class CalendarUiState(
         val isSelected: Boolean
     ) {
         companion object {
-            val Empty = Date("", false)
+            val Empty = Date(
+                dayOfMonth = "",
+                isSelected = false
+            )
         }
     }
 }

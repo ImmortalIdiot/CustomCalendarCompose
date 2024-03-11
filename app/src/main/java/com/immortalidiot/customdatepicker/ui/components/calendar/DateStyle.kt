@@ -1,6 +1,5 @@
 package com.immortalidiot.customdatepicker.ui.components.calendar
 
-import androidx.compose.ui.text.capitalize
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.YearMonth
@@ -12,7 +11,10 @@ object DateStyle {
         get() {
             val daysOfWeek = Array(7) { "" }
             for (day in DayOfWeek.values()) {
-                val localizedDateName = day.getDisplayName(TextStyle.SHORT, Locale.getDefault())
+                val localizedDateName = day.getDisplayName(
+                    TextStyle.SHORT,
+                    Locale.getDefault()
+                )
                 daysOfWeek[day.value - 1] = localizedDateName
             }
             return daysOfWeek

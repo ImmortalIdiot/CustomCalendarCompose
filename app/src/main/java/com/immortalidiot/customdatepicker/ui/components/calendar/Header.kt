@@ -41,7 +41,10 @@ fun Header(
         }
         Text(
             modifier = Modifier
-                .padding(start = 10.dp, end = 10.dp)
+                .padding(
+                    start = 10.dp,
+                    end = 10.dp
+                )
                 .align(Alignment.CenterVertically),
             text = yearMonth.getDisplayName(),
             textAlign = TextAlign.Center,
