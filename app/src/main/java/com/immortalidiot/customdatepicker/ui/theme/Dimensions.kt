@@ -19,11 +19,14 @@ data class Dimensions(
     val verticalNormalPadding: Dp = 8.dp,
     val verticalBigPadding: Dp = 16.dp,
 
+    val horizontalSmallPadding: Dp = 10.dp,
     val horizontalNormalPadding: Dp = 16.dp,
+    val horizontalEnlargedPadding: Dp = 24.dp,
     val horizontalBigPadding: Dp = 32.dp,
     val horizontalVeryBigPadding: Dp = 60.dp,
 
     val normalPadding: Dp = 6.dp,
+    val averagePadding: Dp = 12.dp,
     val bigPadding: Dp = 16.dp,
 
     val shapeSSmall: Dp = 2.dp,
@@ -31,8 +34,9 @@ data class Dimensions(
     val shapeNormal: Dp = 8.dp,
     val shapeSLarge: Dp = 10.dp,
     val shapeMLarge: Dp = 12.dp,
-    val shapeXLarge: Dp = 15.dp,
+    val shapeXLarge: Dp = 16.dp,
     val shapeXLLarge: Dp = 20.dp,
+    val shapeXXLLarge: Dp = 40.dp,
 
     val borderOne: Dp = 1.dp,
     val borderXSSmall: Dp = 2.dp,
@@ -48,6 +52,9 @@ data class Dimensions(
     val deleteAccountDialogWidth: Dp = 350.dp,
 
     val buttonWidth: Dp = 80.dp,
+
+    val smallestThickness: Dp = 1.dp,
+    val smallThickness: Dp = 2.dp
 )
 
 val LocalDimensions = compositionLocalOf { Dimensions() }
