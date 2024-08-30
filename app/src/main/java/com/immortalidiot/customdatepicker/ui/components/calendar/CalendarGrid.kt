@@ -19,8 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import com.immortalidiot.customdatepicker.ui.theme.ClassicGray
+import com.immortalidiot.customdatepicker.ui.theme.LocalDimensions
 import com.immortalidiot.customdatepicker.ui.theme.boldLato14
 import com.immortalidiot.customdatepicker.ui.theme.mediumInter12
 
@@ -66,6 +66,7 @@ fun ContentItem(
     modifier: Modifier = Modifier
 ) {
     val scheme = MaterialTheme.colorScheme
+    val dimensions = LocalDimensions.current
 
     Box(
         modifier = modifier.clickable(
@@ -80,7 +81,7 @@ fun ContentItem(
         if (date.isSelected) {
             Box(
                 modifier = modifier
-                    .size(40.dp)
+                    .size(dimensions.verticalXXLarge)
                     .clip(shape = CircleShape)
                     .background(color = scheme.primary),
                 contentAlignment = Alignment.Center
@@ -107,8 +108,10 @@ fun ItemText(
     text: String,
     modifier: Modifier = Modifier
 ) {
+    val dimensions = LocalDimensions.current
+
     Text(
-        modifier = modifier.padding(12.dp),
+        modifier = modifier.padding(dimensions.averagePadding),
         text = text,
         style = boldLato14,
         color = color,
@@ -121,6 +124,8 @@ fun DayOfWeekItem(
     day: String,
     modifier: Modifier = Modifier
 ) {
+    val dimensions = LocalDimensions.current
+
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center
@@ -128,7 +133,7 @@ fun DayOfWeekItem(
         Text(
             modifier = modifier
                 .align(Alignment.Center)
-                .padding(12.dp),
+                .padding(dimensions.averagePadding),
             text = day.uppercase(),
             style = mediumInter12.copy(color = ClassicGray)
         )

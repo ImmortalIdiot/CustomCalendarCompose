@@ -14,10 +14,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import com.immortalidiot.customdatepicker.ui.theme.ClassicGray
+import com.immortalidiot.customdatepicker.ui.theme.LocalDimensions
 import com.immortalidiot.customdatepicker.ui.theme.boldLato12
 import java.time.YearMonth
+
+const val NEIGHBORING_MONTH: Long = 1
 
 @Composable
 fun Header(
@@ -26,13 +28,15 @@ fun Header(
     onPreviousMonth: (YearMonth) -> Unit,
     onNextMonth: (YearMonth) -> Unit,
 ) {
+    val dimensions = LocalDimensions.current
+
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.Center
     ) {
         IconButton(
             onClick = {
-                onPreviousMonth.invoke(yearMonth.minusMonths(1))
+                onPreviousMonth.invoke(yearMonth.minusMonths(NEIGHBORING_MONTH))
             }) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowLeft,
@@ -43,8 +47,8 @@ fun Header(
         Text(
             modifier = modifier
                 .padding(
-                    start = 10.dp,
-                    end = 10.dp
+                    start = dimensions.horizontalSmallPadding,
+                    end = dimensions.horizontalSmallPadding
                 )
                 .align(Alignment.CenterVertically),
             text = yearMonth.getDisplayName(),
@@ -53,7 +57,7 @@ fun Header(
         )
         IconButton(
             onClick = {
-                onNextMonth.invoke(yearMonth.plusMonths(1))
+                onNextMonth.invoke(yearMonth.plusMonths(NEIGHBORING_MONTH))
             }) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowRight,

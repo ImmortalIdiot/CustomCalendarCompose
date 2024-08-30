@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.immortalidiot.customdatepicker.ui.theme.ClassicGray
+import com.immortalidiot.customdatepicker.ui.theme.LocalDimensions
 import java.time.YearMonth
 
 @Composable
@@ -28,6 +29,7 @@ fun CustomCalendarWidget(
     onNextMonth: (YearMonth) -> Unit,
     onDateClickListener: (CalendarUiState.Date) -> Unit
 ) {
+    val dimensions = LocalDimensions.current
     val scheme = MaterialTheme.colorScheme
     val textColor = ClassicGray
 
@@ -35,7 +37,10 @@ fun CustomCalendarWidget(
         modifier = modifier
             .fillMaxSize()
             .background(color = scheme.onBackground)
-            .padding(24.dp),
+            .padding(
+                start = dimensions.horizontalEnlargedPadding,
+                end = dimensions.horizontalEnlargedPadding
+            ),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -47,9 +52,9 @@ fun CustomCalendarWidget(
         )
         Column(
             modifier = modifier.border(
-                shape = RoundedCornerShape(16.dp),
+                shape = RoundedCornerShape(dimensions.shapeXLarge),
                 color = textColor,
-                width = 2.dp
+                width = dimensions.smallThickness
             ),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
@@ -66,7 +71,7 @@ fun CustomCalendarWidget(
             Divider(
                 modifier = modifier.fillMaxWidth(0.95f),
                 color = textColor,
-                thickness = 1.dp
+                thickness = dimensions.smallestThickness
             )
             Content(
                 modifier = modifier,
