@@ -5,8 +5,6 @@ import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -15,26 +13,44 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+val DarkColorScheme = darkColorScheme(
+    onBackground = ThemeColors.Dark.background,
+    surface = ThemeColors.Dark.surface,
+    onSurface = ThemeColors.Dark.onSurface,
+    primary = ThemeColors.Dark.primary,
+    onPrimary = ThemeColors.Dark.onPrimary,
+    secondary = ThemeColors.Dark.secondary,
+    onSecondary = ThemeColors.Dark.onSecondary,
+    tertiary = ThemeColors.Dark.textNavBar,
+    onTertiary = ThemeColors.Dark.label,
+    outline = ThemeColors.Dark.outline,
+    errorContainer = ThemeColors.Dark.containerColorError,
+    error = ThemeColors.Dark.error,
+    primaryContainer = ThemeColors.Dark.container,
+    onPrimaryContainer = ThemeColors.Dark.container, //
+    onSecondaryContainer = ThemeColors.Dark.buttonOutline,
+    scrim = ThemeColors.Dark.handle
+
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+val LightColorScheme = lightColorScheme(
+    onBackground = ThemeColors.Light.background,
+    surface = ThemeColors.Light.surface,
+    onSurface = ThemeColors.Light.onSurface,
+    primary = ThemeColors.Light.primary,
+    onPrimary = ThemeColors.Light.onPrimary,
+    secondary = ThemeColors.Light.secondary,
+    onSecondary = ThemeColors.Light.onSecondary,
+    tertiary = ThemeColors.Light.textNavBar,
+    onTertiary = ThemeColors.Light.label,
+    outline = ThemeColors.Light.outline,
+    errorContainer = ThemeColors.Light.containerColorError,
+    error = ThemeColors.Light.error,
+    primaryContainer = ThemeColors.Light.container,
+    onPrimaryContainer = ThemeColors.Light.container, //
+    onSecondaryContainer = ThemeColors.Light.buttonOutline,
+    scrim = ThemeColors.Light.handle
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
 )
 
 @Composable
@@ -47,7 +63,7 @@ fun CustomDatePickerTheme(
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+            if (darkTheme) DarkColorScheme else LightColorScheme
         }
 
         darkTheme -> DarkColorScheme
