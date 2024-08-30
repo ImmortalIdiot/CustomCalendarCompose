@@ -37,7 +37,8 @@ fun Header(
         IconButton(
             onClick = {
                 onPreviousMonth.invoke(yearMonth.minusMonths(NEIGHBORING_MONTH))
-            }) {
+            }
+        ) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowLeft,
                 tint = ClassicGray,
@@ -58,7 +59,8 @@ fun Header(
         IconButton(
             onClick = {
                 onNextMonth.invoke(yearMonth.plusMonths(NEIGHBORING_MONTH))
-            }) {
+            }
+        ) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowRight,
                 tint = ClassicGray,

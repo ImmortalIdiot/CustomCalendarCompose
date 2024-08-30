@@ -7,6 +7,7 @@ import java.time.format.TextStyle
 import java.util.Locale
 
 object DateStyle {
+
     val daysOfWeek: Array<String>
         get() {
             val daysOfWeek = Array(7) { "" }

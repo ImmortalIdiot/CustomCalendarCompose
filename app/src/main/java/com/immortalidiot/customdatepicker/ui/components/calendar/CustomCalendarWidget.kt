@@ -14,7 +14,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.immortalidiot.customdatepicker.ui.theme.ClassicGray
 import com.immortalidiot.customdatepicker.ui.theme.LocalDimensions
 import java.time.YearMonth
@@ -62,6 +61,7 @@ fun CustomCalendarWidget(
             Row {
                 repeat(days.size) {
                     val item = days[it]
+
                     DayOfWeekItem(
                         day = item,
                         modifier = modifier.weight(1f)
