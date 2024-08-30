@@ -46,4 +46,15 @@ class CalendarViewModel : ViewModel() {
             }
         }
     }
+
+    fun selectDate(selectedDate: CalendarUiState.Date) {
+        viewModelScope.launch {
+            _uistate.update { currentState ->
+                val updatedDates =  currentState.dates.map {date ->
+                    date.copy(isSelected = date == selectedDate)
+                }
+                currentState.copy(dates = updatedDates)
+            }
+        }
+    }
 }
